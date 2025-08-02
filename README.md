@@ -53,10 +53,41 @@ Double-click `ptt.command` to start the app.
 - **Microphone access** - Required for voice recording
 - **Accessibility access** - Required for global hotkey detection
 
+### 6. Create Desktop App (Optional)
+For easier access, create a native-looking app icon:
+
+#### Option A: Automator App (Recommended)
+1. Open **Automator** (Applications → Automator)
+2. Choose **Application** template
+3. Search for "**Run Shell Script**" and drag it to workflow
+4. Set Shell to: `/bin/bash`
+5. Paste this script (update path to your project location):
+   ```bash
+   cd /path/to/your/macapps
+   source whisper_env/bin/activate
+   nohup python run_ptt.py > /dev/null 2>&1 &
+   ```
+   **Replace `/path/to/your/macapps` with your actual project path**
+   
+   *Tip: To find your project path, open Terminal, navigate to your project folder, and run `pwd`*
+6. **File** → **Save** as "VoicePTT" to Desktop/Applications
+7. Right-click saved app → **Get Info** → drag a custom icon to the icon area (optional)
+
+#### Option B: Desktop Alias
+1. Right-click `ptt.command` → **Make Alias**
+2. Drag alias to Desktop
+3. Rename to "VoicePTT"
+4. Right-click → **Get Info** → change icon (optional)
+
+Now you can launch VoicePTT by double-clicking the desktop icon!
+
 ## 🎮 Usage
 
 ### Starting the App
-1. Double-click `ptt.command` 
+**Method 1:** Double-click `ptt.command` in the project folder
+**Method 2:** Double-click your desktop shortcut/app (if created)
+
+1. Launch using either method above
 2. Look for 🎙️ icon in your menu bar
 3. Wait for "Ready" status (Whisper model loading)
 
