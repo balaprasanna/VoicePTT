@@ -1,0 +1,6 @@
+{
+  "mode": "copy",
+  "hotkey": "cmd_r",
+  "model_size": "small",
+  "audio_device": 1
+}
