@@ -2,3 +2,8 @@ archive/
 archive/*
 whisper_env/
 whisper_env/*
+
+# Runtime logs and data files
+voiceptt.log
+voiceptt_transcriptions.txt
+voiceptt_settings.json
